@@ -4,8 +4,10 @@
   "type": "module",
   "scripts": {
     "gen:openapi-typescript": "npx openapi-typescript swagger.json --output output-openapi-typescript/types.ts",
-    "gen:hey-api": "npx @hey-api/openapi-ts -i swagger.json -o output-hey-api",
+    "gen:hey-api": "npx @hey-api/openapi-ts -i swagger.json -o output-hey-api --plugins @hey-api/typescript",
+    "gen:hey-api-full": "npx @hey-api/openapi-ts -i swagger.json -o output-hey-api-full",
     "gen:all": "npm run gen:openapi-typescript && npm run gen:hey-api",
+    "benchmark": "node benchmark.mjs",
     "compare": "node compare-types-only.mjs",
     "compare:types": "node compare-types-only.mjs",
     "compare:full": "node compare-outputs.mjs",

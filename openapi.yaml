@@ -1,0 +1,35 @@
+openapi: 3.0.1
+info:
+  title: PetStore
+  version: "1.0"
+paths:
+  /pets:
+    get:
+      summary: list pets
+      operationId: listPets
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pet'
+components:
+  schemas:
+    Pet:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        tag:
+          type: string
+      required: [id, name]

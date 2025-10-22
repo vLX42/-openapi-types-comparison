@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# Generated outputs
+output-openapi-typescript/
+output-hey-api/
+
+# Comparison report
+COMPARISON_REPORT.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

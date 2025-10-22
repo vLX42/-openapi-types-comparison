@@ -1,0 +1,19 @@
+{
+  "name": "openapi-comparison-project",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "gen:openapi-typescript": "npx openapi-typescript swagger.json --output output-openapi-typescript/types.ts",
+    "gen:hey-api": "npx @hey-api/openapi-ts -i swagger.json -o output-hey-api",
+    "gen:all": "npm run gen:openapi-typescript && npm run gen:hey-api",
+    "compare": "node compare-types-only.mjs",
+    "compare:types": "node compare-types-only.mjs",
+    "compare:full": "node compare-outputs.mjs",
+    "compare:stats": "node compare-stats.mjs",
+    "compare:samples": "node view-samples.mjs",
+    "report": "node generate-comparison-report.mjs",
+    "full-compare": "npm run gen:all && npm run compare"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
